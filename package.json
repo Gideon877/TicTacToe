@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/ShanaSkydancer/TicTacToe/issues"
   },
-  "homepage": "https://github.com/ShanaSkydancer/TicTacToe#readme"
+  "homepage": "https://github.com/ShanaSkydancer/TicTacToe#readme",
+  "dependencies": {
+    "mocha": "^5.0.1"
+  }
 }

@@ -15,6 +15,6 @@ describe("Move Validator", function() {
 
         var moveValidator = new MoveValidator(move, board);
         
-        assert.equal(moveValidator.isSuccessful(), false);
+        assert.equal(moveValidator.isSuccessfulMove(), false);
     })
 });

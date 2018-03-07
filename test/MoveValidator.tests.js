@@ -16,5 +16,19 @@ describe("Move Validator", function() {
         var moveValidator = new MoveValidator(move, board);
         
         assert.equal(moveValidator.isSuccessfulMove(), false);
-    })
+    });
+
+    it("should return true for a valid move", function() {
+        var move = new Move(0, 'X');
+
+        var board = [
+            ' ', ' ', ' ',
+            ' ', ' ', ' ',
+            ' ', ' ', ' '
+        ];
+
+        var validator = new MoveValidator(move, board);
+        
+        assert.equal(validator.isSuccessfulMove(), true);
+    });
 });

@@ -1,10 +1,13 @@
 const assert = require('assert');
+const Board = require('../src/Board');
+const Move = require('../src/Move');
+const BoardController = require('../src/BoardController');
 
 describe("Board Controller", function() {
     it("should place a symbol on the correct position of the board", function() {
-        let board = new Board();
-        let move = new Move(0, 'X');
-        let boardController = new BoardController(board);
+        var board = new Board();
+        var move = new Move(0, 'X');
+        var boardController = new BoardController(board);
 
         boardController.execute(move);
 

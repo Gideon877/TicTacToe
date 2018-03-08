@@ -1,6 +1,5 @@
 const Move = require('../src/Move');
 
-
 module.exports = function TicTacToe(playerOne, playerTwo, boardController) {
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
@@ -13,7 +12,7 @@ module.exports = function TicTacToe(playerOne, playerTwo, boardController) {
 
         this.alternatePlayerOnSuccessfulMove(validation);
 
-        return validation;
+        return validation;  
     }
 
     this.alternateCurrentPlayer = function() {

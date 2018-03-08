@@ -11,6 +11,6 @@ describe('Game Status', function () {
 
         var gameStatus = new GameStatus(board);
 
-        assert.equal(GameStatus.hasWinner(), true);
+        assert.equal(gameStatus.hasWinner(), true);
     });
 });

@@ -2,7 +2,6 @@ const assert = require('assert');
 const Board = require('../src/Board');
 const Move = require('../src/Move');
 const BoardController = require('../src/BoardController');
-// const MoveValidator = require("../src/MoveValidator");
 
 describe("Board Controller", function() {
     it("should place a symbol on the correct position of the board", function() {

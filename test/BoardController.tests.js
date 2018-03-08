@@ -2,6 +2,7 @@ const assert = require('assert');
 const Board = require('../src/Board');
 const Move = require('../src/Move');
 const BoardController = require('../src/BoardController');
+// const MoveValidator = require("../src/MoveValidator");
 
 describe("Board Controller", function() {
     it("should place a symbol on the correct position of the board", function() {
@@ -16,5 +17,13 @@ describe("Board Controller", function() {
             ' ', ' ', ' ',
             ' ', ' ', ' ' 
         ]);
+    });
+
+    it("should return success message", function() {
+        var board = new Board();
+        var move = new Move(0, 'X');
+        var boardController = new BoardController(board);
+
+        assert.deepEqual(boardController.execute(move).status(), "Player X has played on position 0.");
     });
 });

@@ -2,7 +2,7 @@ module.exports = function MoveValidator(move, board) {
     this.move = move;
     this.board = board;
 
-    this.isSuccessfulMove = function(){
+    this.isSuccessfulMove = function() {
         return this.isInBounds() && this.isANumber() && this.hasSpace();
     }
     

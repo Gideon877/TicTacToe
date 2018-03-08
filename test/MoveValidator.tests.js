@@ -27,8 +27,22 @@ describe("Move Validator", function() {
             ' ', ' ', ' '
         ];
 
-        var validator = new MoveValidator(move, board);
+        var MoveValidator = new MoveValidator(move, board);
         
-        assert.equal(validator.isSuccessfulMove(), true);
+        assert.equal(MoveValidator.isSuccessfulMove(), true);
+    });
+
+    it("should return success message", function() {
+        let move = new Move(0, 'X');
+
+        let board = [
+            ' ', ' ', ' ',
+            ' ', ' ', ' ',
+            ' ', ' ', ' '
+        ];
+
+        let moveValidator = new MoveValidator(move, board);
+        
+        assert.equal(moveValidator.status(), "Player X has played on position 0.");
     });
 });

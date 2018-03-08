@@ -26,4 +26,5 @@ describe("Board Controller", function() {
 
         assert.deepEqual(boardController.execute(move).status(), "Player X has played on position 0.");
     });
+
 });

@@ -13,4 +13,16 @@ describe('Game Status', function () {
 
         assert.equal(gameStatus.hasWinner(), true);
     });
+
+    it("should evaluate a draw", function() {
+        var board = [
+            'X', 'O', 'X',
+            'X', 'X', 'O',
+            'O', 'X', 'O'
+        ];
+
+        var gameStatus = new GameStatus(board);
+
+        assert.equal(gameStatus.isDraw(), true);
+    });
 });

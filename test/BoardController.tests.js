@@ -26,4 +26,17 @@ describe("Board Controller", function() {
         assert.deepEqual(boardController.execute(move).status(), "Player X has played on position 0.");
     });
 
+    it("should announce a winner in a winning game", function() {
+        var moveOne = new Move(0, 'X');
+        var moveTwo = new Move(4, 'X');
+        var moveThree = new Move(8, 'X');
+        var board = new Board();
+        var boardController = new BoardController(board);
+
+        boardController.execute(moveOne);
+        boardController.execute(moveTwo);
+        boardController.execute(moveThree)
+
+        assert.equal(boardController.hasWinner(), true);
+    });
 });

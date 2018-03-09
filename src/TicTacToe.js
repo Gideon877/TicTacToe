@@ -1,5 +1,5 @@
 const Move = require('../src/Move');
-const GameStatusMessageGenerator = require("./GameStatusMessage");
+const GameStatusMessage = require("./GameStatusMessage");
 
 module.exports = function TicTacToe(playerOne, playerTwo, boardController) {
     this.playerOne = playerOne;
@@ -10,7 +10,7 @@ module.exports = function TicTacToe(playerOne, playerTwo, boardController) {
     this.play = function(position) {
         var move = new Move(position, this.currentPlayer.symbol);
         var validation = boardController.execute(move);
-        gameStatusMessage = gameStatusMessageGenerator.generate();
+        gameStatusMessage = gameStatusMessage.generate();
         this.alternatePlayerOnSuccessfulMove(validation);
 
         var stringToOutput = outputter.output(boardController.getBoard(), validation.status(), gameStatusMessage);

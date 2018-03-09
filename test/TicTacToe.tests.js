@@ -20,4 +20,54 @@ describe("TicTacToe", function() {
         "   |   |   \n"
         );
     });
+
+    it("should alternate players", function() {
+        ticTacToe.play(0);
+
+        assert.equal(ticTacToe.play(4).asString,
+            " X |   |   \n" +
+            "===+===+===\n" +
+            "   | O |   \n" +
+            "===+===+===\n" +
+            "   |   |   \n"  +
+            "Player O has played on position 4.\n"+
+            "Next player's turn.\n"
+        );
+    });
+
+    it("should not alternate player if the play was not valid or legal", function() {
+        ticTacToe.play(0);
+        ticTacToe.play(4);
+        ticTacToe.play(3);
+        ticTacToe.play(6);
+        ticTacToe.play(6);
+
+        assert.equal(ticTacToe.play(7).asString,
+            " X |   |   \n" +
+            "===+===+===\n" +
+            " X | O |   \n" +
+            "===+===+===\n" +
+            " O | X |   \n"  +
+            "Player X has played on position 7.\n" +
+            "Next player's turn.\n"
+        );
+    });
+
+    it("should announce the winner of a winning game", function() {
+        ticTacToe.play(0);
+        ticTacToe.play(4);
+        ticTacToe.play(3);
+        ticTacToe.play(6);
+        ticTacToe.play(7)
+
+        assert.equal(ticTacToe.play(2).asString,
+            " X |   | O \n" +
+            "===+===+===\n" +
+            " X | O |   \n" +
+            "===+===+===\n" +
+            " O | X |   \n"  +
+            "Player O has played on position 2.\n" +
+            "Player O has won the game.\n"
+        );
+    });
 });

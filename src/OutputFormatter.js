@@ -1,12 +1,13 @@
 module.exports = function OutputFormatter() {
-    this.border = "\n===+===+===\n";
+    this.border = " \n===+===+===\n";
 
     this.format = function(board, moveStatusMessage, gameStatusMessage) {
-        return this.joinRow(this.firstRow(board)) + this.border +
-        this.joinRow(this.secondRow(board)) + this.border +
-        this.joinRow(this.thirdRow(board)) +
-        "\n" + moveStatusMessage +
-        "\n" + gameStatusMessage + "\n";
+        return " " + this.joinRow(this.firstRow(board)) + this.border +
+            " " + this.joinRow(this.secondRow(board)) + this.border +
+            " " + this.joinRow(this.thirdRow(board)) + 
+            " \n" + moveStatusMessage + 
+            "\n" + gameStatusMessage + 
+            "\n";
     }
 
     this.firstRow = function(board) {
@@ -26,3 +27,6 @@ module.exports = function OutputFormatter() {
     }
 
 };
+
+'X |   |  \n===+===+===\n  |   |  \n===+===+===\n  |   | \nPlayer X has played on position 0.\nNext player\'s turn.\n'
+' X |   |   \n===+===+===\n   |   |   \n===+===+===\n   |   |   \nPlayer X has played on position 0.\nNext player\'s turn.\n'

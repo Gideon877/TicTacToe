@@ -1,5 +1,8 @@
 const assert = require("assert");
 
+const OutputFormatter = require("../src/OutputFormatter");
+const StringOutputter = require("../src/StringOutputter");
+
 describe("String Outputter", function() {
     it("should output a board as a formatted string", function() {
         var formatter = new OutputFormatter();

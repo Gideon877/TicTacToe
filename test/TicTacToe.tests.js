@@ -2,7 +2,8 @@ const assert = require('assert');
 const TicTacToe = require('../src/TicTacToe');
 const Player = require('../src/Player');
 const Board = require('../src/Board');
-const BoardController = require('../src/BoardController');
+const BoardController = require("../src/BoardController");
+const MoveValidator = require("../src/MoveValidator");
 
 describe("TicTacToe", function() {
     var playerOne = new Player('X');

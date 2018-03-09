@@ -13,6 +13,7 @@ module.exports = function BoardController(board) {
         return validation;
     }
     
+    
     this.getBoard = function(board) {
         return this.board.state;
     }

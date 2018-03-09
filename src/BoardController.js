@@ -27,4 +27,8 @@ module.exports = function BoardController(board) {
         return this.board.state;
     }
 
+    this.isGameOver = function() {
+        return this.gameStatus.isDraw() || this.gameStatus.hasWinner();
+    }
+
 }

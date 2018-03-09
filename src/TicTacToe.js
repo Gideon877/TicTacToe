@@ -1,5 +1,6 @@
-const Move = require('../src/Move');
+const Move = require("./Move");
 const GameStatusMessage = require("./GameStatusMessage");
+const Result = require("./Result");
 
 module.exports = function TicTacToe(playerOne, playerTwo, boardController) {
     this.playerOne = playerOne;
@@ -15,7 +16,7 @@ module.exports = function TicTacToe(playerOne, playerTwo, boardController) {
 
         var stringToOutput = outputter.output(boardController.getBoard(), validation.status(), gameStatusMessage);
 
-        return stringToOutput;
+        return new Result(stringToOutput, boardController.isGameOver());
     }
 
     this.alternateCurrentPlayer = function() {

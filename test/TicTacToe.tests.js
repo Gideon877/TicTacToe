@@ -1,15 +1,25 @@
-const assert = require('assert');
-const TicTacToe = require('../src/TicTacToe');
-const Player = require('../src/Player');
-const Board = require('../src/Board');
+const assert = require("assert");
+const TicTacToe = require("../src/TicTacToe");
+const Player = require("../src/Player");
+const Board = require("../src/Board");
 const BoardController = require("../src/BoardController");
 const MoveValidator = require("../src/MoveValidator");
+const OutputFormatter = require("../src/OutputFormatter");
+const StringOutputter = require("../src/StringOutputter");
 
 describe("TicTacToe", function() {
-    var playerOne = new Player('X');
-    var board = new Board();
-    var boardController = new BoardController(board);
-    var ticTacToe = new TicTacToe(playerOne);
+    var ticTacToe; 
+
+    beforeEach(function() {
+        var playerOne = new Player('X');
+        var playerTwo = new Player('O');
+        var board = new Board();
+        var outputFormatter = new OutputFormatter();
+        var stringOutputter = new StringOutputter(outputFormatter);
+        var boardController = new BoardController(board);
+
+        ticTacToe = new TicTacToe(playerOne, playerTwo, boardController, stringOutputter);
+    });
 
     it("should place the symbol for the first player on position 0", function () {
         assert.equal(ticTacToe.play(0), 
